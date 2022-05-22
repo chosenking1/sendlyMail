@@ -6,4 +6,5 @@ import com.mail.sendly.data.model.TypeOfMail;
 public class DeleteInboxRequest {
     private TypeOfMail mailType;
     private MailBox mailBox;
+
 }

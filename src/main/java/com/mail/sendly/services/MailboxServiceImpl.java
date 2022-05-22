@@ -32,7 +32,7 @@ public class MailboxServiceImpl implements MailboxService {
     }
 
     @Override
-    public List<FindMailResponse> findByEmail(String userEmail) {
+    public List<FindMailResponse> findMessageByEmail(String userEmail) {
         return null;
     }
 
@@ -62,7 +62,7 @@ public class MailboxServiceImpl implements MailboxService {
     }
 
     @Override
-    public String deleteAllMail(MailBoxes id, DeleteAllEmails deleteAllEmails) {
+    public String deleteAllMail(MailBox id, DeleteAllEmails deleteAllEmails) {
         return null;
     }
 }

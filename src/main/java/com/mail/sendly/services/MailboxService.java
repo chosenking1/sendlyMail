@@ -18,7 +18,9 @@ public interface MailboxService {
     MailboxRepository getRepository();
 
 
-    List<FindMailResponse> findByEmail(String userEmail);
+
+
+    List<FindMailResponse> findMessageByEmail(String userEmail);
 
     String deleteInbox(MailBoxes id, DeleteInboxRequest deleteInbox);
 
@@ -29,6 +31,6 @@ public interface MailboxService {
     String deleteOutbox(MailBoxes id, DeleteOutboxRequest deleteOutbox);
     String deleteOutbox(String id, DeleteOutboxRequest deleteOutbox);
 
-    String deleteAllMail(MailBoxes id, DeleteAllEmails deleteAllEmails);
+    String deleteAllMail(MailBox id, DeleteAllEmails deleteAllEmails);
 
 }
