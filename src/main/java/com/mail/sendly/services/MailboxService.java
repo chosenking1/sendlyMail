@@ -17,9 +17,6 @@ public interface MailboxService {
 
     MailboxRepository getRepository();
 
-
-
-
     List<FindMailResponse> findMessageByEmail(String userEmail);
 
     String deleteInbox(MailBoxes id, DeleteInboxRequest deleteInbox);
