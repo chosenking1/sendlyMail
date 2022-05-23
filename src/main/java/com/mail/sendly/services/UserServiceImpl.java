@@ -1,5 +1,6 @@
 package com.mail.sendly.services;
 
+import com.mail.sendly.data.model.User;
 import com.mail.sendly.data.repository.UserRepository;
 import com.mail.sendly.dtos.requests.RegisterUserRequest;
 import com.mail.sendly.dtos.responses.FindUserResponse;
@@ -15,6 +16,13 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public RegisterUserResponse saveUser(RegisterUserRequest request) {
+           User user = new User();
+           user.setFirstName(request.getFirstName());
+           user.setLastName(request.getLastName());
+           user.setEmail(request.getEmail());
+           user.setPassword(request.getPassword());
+           User userDetails = userRepository.save(user);
+
         return null;
     }
 
