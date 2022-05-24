@@ -7,7 +7,7 @@ import javax.validation.constraints.Email;
 @Setter
 @Getter
 @AllArgsConstructor
-@Builder
+//@Builder
 public class RegisterUserRequest {
     private String firstName;
     private String lastName;

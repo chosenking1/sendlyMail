@@ -1,4 +1,5 @@
 package com.mail.sendly.services;
 
-public class MailboxesServiceImpl {
+public class MailboxesServiceImpl implements MailboxesService{
+
 }
