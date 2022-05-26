@@ -3,7 +3,7 @@ package com.mail.sendly.dtos.requests;
 import com.mail.sendly.data.model.Message;
 import com.mail.sendly.data.model.TypeOfMail;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
+
 import lombok.Getter;
 import lombok.Setter;
 

@@ -17,6 +17,7 @@ import java.util.List;
 public class MailBoxes {
     @Id
     private String email;
+
     @NonNull
     private List<MailBox> mails;
 
