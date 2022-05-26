@@ -21,18 +21,20 @@ public class UserServiceImpl implements UserService{
 
     ModelMapper mapper = new ModelMapper();
     RegisterUserResponse response = new RegisterUserResponse();
-
-
+//    @Autowired
+    MailBox mailBox = new MailBox();
+    @Autowired
+    MailboxesService mailboxesService= new MailboxesServiceImpl();
     @Override
     public RegisterUserResponse saveUser(RegisterUserRequest request) {
            User user = new User();
 
-           MailboxesService mailboxesService= new MailboxesServiceImpl();
 
-        MailBox mailBox = new MailBox();
+
+
         CreateMailboxes createMailboxes = new CreateMailboxes(request.getEmail(), Collections.singletonList(mailBox));
         createMailboxes.setEmail(request.getEmail());
-//        createMailboxes.setMailbox(Collections.singletonList(mailBox));
+        createMailboxes.setMailbox(Collections.singletonList(mailBox));
         mailboxesService.saveMailboxes(createMailboxes);
 
 
