@@ -3,16 +3,15 @@ package com.mail.sendly.services;
 import com.mail.sendly.data.model.MailBox;
 import com.mail.sendly.data.model.MailBoxes;
 import com.mail.sendly.data.repository.MailboxRepository;
-import com.mail.sendly.dtos.requests.DeleteAllEmails;
-import com.mail.sendly.dtos.requests.DeleteInboxRequest;
-import com.mail.sendly.dtos.requests.DeleteOutboxRequest;
-import com.mail.sendly.dtos.requests.SendEmailRequest;
+import com.mail.sendly.dtos.requests.*;
 import com.mail.sendly.dtos.responses.FindMailResponse;
 import com.mail.sendly.dtos.responses.SentEmailResponse;
 
 import java.util.List;
 
 public interface MailboxService {
+    void saveMailbox(CreateMailbox createMailbox);
+
     SentEmailResponse sendEmail(SendEmailRequest emailMessage);
 
     MailboxRepository getRepository();

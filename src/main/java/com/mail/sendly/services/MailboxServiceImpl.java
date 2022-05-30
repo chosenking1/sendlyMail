@@ -4,15 +4,13 @@ import com.mail.sendly.data.model.MailBox;
 import com.mail.sendly.data.model.MailBoxes;
 
 import com.mail.sendly.data.repository.MailboxRepository;
-import com.mail.sendly.dtos.requests.DeleteAllEmails;
-import com.mail.sendly.dtos.requests.DeleteInboxRequest;
-import com.mail.sendly.dtos.requests.DeleteOutboxRequest;
-import com.mail.sendly.dtos.requests.SendEmailRequest;
+import com.mail.sendly.dtos.requests.*;
 import com.mail.sendly.dtos.responses.FindMailResponse;
 import com.mail.sendly.dtos.responses.SentEmailResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 @Service
 public class MailboxServiceImpl implements MailboxService {
@@ -20,6 +18,14 @@ public class MailboxServiceImpl implements MailboxService {
     MailboxRepository emailRepository;
 
 
+    @Override
+    public void saveMailbox(CreateMailbox createMailbox) {
+        MailBox mailBox = new MailBox();
+//        mailBox.setEmail(createMailbox.get());
+        mailBox.setMessage(createMailbox.getMessages());
+        mailBox.setType(Collections.singletonList(createMailbox.getTypeOfMail()));
+        emailRepository.save(mailBox);
+    }
     @Override
     public SentEmailResponse sendEmail(SendEmailRequest emailMessage) {
         return null;

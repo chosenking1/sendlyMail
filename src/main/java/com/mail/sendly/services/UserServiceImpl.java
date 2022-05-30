@@ -29,13 +29,10 @@ public class UserServiceImpl implements UserService{
     public RegisterUserResponse saveUser(RegisterUserRequest request) {
            User user = new User();
 
-
-
-
-        CreateMailboxes createMailboxes = new CreateMailboxes(request.getEmail(), Collections.singletonList(mailBox));
-        createMailboxes.setEmail(request.getEmail());
-        createMailboxes.setMailbox(Collections.singletonList(mailBox));
-        mailboxesService.saveMailboxes(createMailboxes);
+           CreateMailboxes createMailboxes = new CreateMailboxes(request.getEmail(), Collections.singletonList(mailBox));
+           createMailboxes.setEmail(request.getEmail());
+           createMailboxes.setMailbox(Collections.singletonList(mailBox));
+           mailboxesService.saveMailboxes(createMailboxes);
 
 
            user.setFirstName(request.getFirstName());
