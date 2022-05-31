@@ -11,7 +11,7 @@ import java.util.List;
 @Data
 @RequiredArgsConstructor
 @EqualsAndHashCode
-@Document("mailbox")
+@Document("mail")
 @NoArgsConstructor
 public class MailBox {
     @Id

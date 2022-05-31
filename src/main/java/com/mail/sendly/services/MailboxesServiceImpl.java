@@ -24,9 +24,11 @@ public class MailboxesServiceImpl implements MailboxesService{
     @Override
     public void saveMailboxes(CreateMailboxes createMailboxes) {
         CreateMailbox createMailbox = new CreateMailbox(TypeOfMail.INBOX, Collections.singletonList(new Message()));
+        CreateMailbox createMailboxOutbox = new CreateMailbox(TypeOfMail.SENT, Collections.singletonList(new Message()));
 
-        createMailbox.setMessages(Collections.singletonList(new Message()));
+//        createMailbox.setMessages(Collections.singletonList(new Message()));
         mailboxService.saveMailbox(createMailbox);
+        mailboxService.saveMailbox(createMailboxOutbox);
 
         MailBoxes mailBoxes = new MailBoxes();
         mailBoxes.setEmail(createMailboxes.getEmail());
