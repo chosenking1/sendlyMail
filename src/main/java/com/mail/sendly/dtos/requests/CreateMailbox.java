@@ -16,4 +16,5 @@ import java.util.List;
 public class CreateMailbox {
     private TypeOfMail typeOfMail;
     private List<Message> messages;
+    private String email;
 }

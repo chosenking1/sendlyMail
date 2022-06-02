@@ -15,8 +15,8 @@ public class UserController {
         @Autowired
         private UserService userService;
 
-        @Autowired
-        private MailboxesService mailboxesService;
+//        @Autowired
+//        private MailboxesService mailboxesService;
 
         @PostMapping("/save")
         public RegisterUserResponse saveUser(@RequestBody RegisterUserRequest request)

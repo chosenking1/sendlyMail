@@ -15,10 +15,13 @@ import java.util.List;
 @NoArgsConstructor
 public class MailBox {
     @Id
+    private String id;
+
     private String email;
     @NonNull
     private List<Message> message;
 
-    private List<TypeOfMail> type;
+    private TypeOfMail type;
+
 
 }
