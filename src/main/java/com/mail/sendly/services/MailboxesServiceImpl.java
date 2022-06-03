@@ -16,7 +16,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class MailboxesServiceImpl implements MailboxesService{
@@ -72,13 +72,18 @@ public class MailboxesServiceImpl implements MailboxesService{
         List <MailBox> mailBox = new ArrayList<>();
         MailBoxes mailBoxes = new MailBoxes();
 
-        mailBox = mailboxRepository.findAllByEmail(sendEmailRequest.getReceiver());
-        for (MailBox mailbox: mailBox
+        for (String receiver:sendEmailRequest.getReceiver()
         ) {
-            mailBoxes = mailboxesRepository.findAllByEmail(mailbox.getEmail());
-            mailBoxes.setMails(mailBox);
-            mailboxesRepository.save(mailBoxes);
+            mailBox = mailboxRepository.findAllByEmail(receiver);
+
+            for (MailBox mailbox: mailBox
+            ) {
+                mailBoxes = mailboxesRepository.findAllByEmail(mailbox.getEmail());
+                mailBoxes.setMails(mailBox);
+                mailboxesRepository.save(mailBoxes);
+            }
         }
+
     }
 
     //    @Override

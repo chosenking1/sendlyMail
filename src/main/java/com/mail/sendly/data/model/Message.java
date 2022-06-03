@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 @Service
 @Data
 @RequiredArgsConstructor
@@ -18,7 +20,7 @@ public class Message {
     @NonNull
     private String sender;
     private LocalDateTime creationTime;
-    private String receiver;
+    private List<String> receiver;
     private boolean isRead = false;
     private String text;
 

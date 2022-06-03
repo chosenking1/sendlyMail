@@ -41,15 +41,21 @@ public class MailboxServiceImpl implements MailboxService {
             }
         }
 
-        receiverMailbox = emailRepository.findAllByEmail(emailMessage.getReceiver());
-        for (MailBox mailbox: receiverMailbox
-        ) {
-            if(mailbox.getType().equals(TypeOfMail.INBOX)){
 
-                        mailbox.getMessage().add(emailMessage);
-                        emailRepository.save(mailbox);
+        for (String receiver:emailMessage.getReceiver()
+             ) {
+            receiverMailbox = emailRepository.findAllByEmail(receiver);
+
+            for (MailBox mailbox: receiverMailbox
+            ) {
+                if(mailbox.getType().equals(TypeOfMail.INBOX)){
+
+                    mailbox.getMessage().add(emailMessage);
+                    emailRepository.save(mailbox);
+                }
             }
         }
+
 
 
 
